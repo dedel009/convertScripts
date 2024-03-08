@@ -82,6 +82,7 @@ def convert_html(input_html):
     return str(soup.prettify())
 
 if __name__ == '__main__':
+    #변환 해야할 html 소스
     input_html = """
 									<li>
 										<label for="mngt">관리기관</label>
