@@ -35,9 +35,9 @@ def convert_to_java_type(postgres_type):
     elif postgres_type == 'timestamp':
         return 'String'
     elif postgres_type == 'double precision':
-        return 'String'
+        return 'Double'
     elif postgres_type == 'numeric':
-        return 'String'
+        return 'Double'
     # 추가적인 데이터 타입에 대한 매핑을 여기에 추가할 수 있습니다.
     else:
         return 'Object'  # 기본값으로 Object를 반환합니다.
@@ -70,7 +70,7 @@ def main():
     cursor = conn.cursor()
     
     #테이블 명
-    table_name = 'rdl_rdar_as';
+    table_name = 'rdt_sdwk_dt';
 
     
     #컬럼명, 컬럼 타입, 컬럼 코멘트 조회 쿼리
