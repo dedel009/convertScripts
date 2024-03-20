@@ -36,7 +36,7 @@ def convert_html(input_html):
                 else :
                     new_tag = soup.new_tag('UisSelectboxCode')  
                     new_tag['attNam'] = codeselect_tag['codetype']
-                    new_tag['tblNam'] = "{selectedWorkSubMenu?.subMenu}"                                                             
+                    new_tag['tblNam'] = "{selectedWorkSubMenuInfo?.subMenu}"                                                             
                 # 필요한 속성을 설정합니다.
                 new_tag['sname'] = codeName
                 new_tag['sid'] = codeName
@@ -84,28 +84,16 @@ def convert_html(input_html):
 if __name__ == '__main__':
     #변환 해야할 html 소스
     input_html = """
-			                        <li>
+                                    <li>
 									    <label for="seq">관리번호</label>
                                         <div class="input_area">
-                                            <input type="text" id="RDA_IDN" name="RDA_IDN" title="관리번호"class="form-control input-sm" onlyNumber>
-                                        </div>
-                                    </li>                       
-                                    <li>
-                                        <label for="BLC_CDE">보도종류</label>
-                                        <div class="input_area">
-                                            <uis:codeselect name="BLC_CDE" selected="" codetable="CMT_CODE_MA" tablename="RDT_SDWK_DT" codetype="BLC_CDE" stylestring="class='column_filter input-sm'"></uis:codeselect>
+                                            <input type="text" id="FTR_IDN" name="FTR_IDN" title="관리번호" class="form-control input-sm" onlyNumber>
                                         </div>
                                     </li>
                                     <li>
-                                        <label for="LMA_CDE">보도재질</label>
+                                        <label for="seq">구간번호</label>
                                         <div class="input_area">
-                                            <uis:codeselect name="LMA_CDE" selected="" codetable="CMT_CODE_MA" tablename="RDT_SDWK_DT" codetype="LMA_CDE" stylestring="class='column_filter input-sm'"></uis:codeselect>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <label for="ADD_CDE">차도재질</label>
-                                        <div class="input_area">
-                                            <uis:codeselect name="ADD_CDE" selected="" codetable="CMT_CODE_MA" tablename="RDT_RDWY_DT" codetype="ADD_CDE" stylestring="class='column_filter input-sm'"></uis:codeselect>
+                                            <input type="text" id="SEC_IDN" name="SEC_IDN" title="공사번호" class="form-control input-sm" onlyNumber>
                                         </div>
                                     </li>
                                     <li>
@@ -114,12 +102,24 @@ if __name__ == '__main__':
                                             <uis:codeselect name="RAW_CDE" selected="" codetable="CMT_CODE_MA" tablename="RDT_ROUT_DT" codetype="RAW_CDE" stylestring="class='column_filter input-sm'"></uis:codeselect>
                                         </div>
                                     </li>
-                                    <li>
+									<li>
                                         <label for="JYG_CDE">도로기능</label>
                                         <div class="input_area">
                                             <uis:codeselect name="FNC_CDE" selected="" codetable="CMT_CODE_MA" tablename="RDT_ROUT_DT" codetype="FNC_CDE" stylestring="class='column_filter input-sm'"></uis:codeselect>
                                         </div>
-                                    </li>                               
+                                    </li>
+                                    <li>
+                                        <label for="seq">노선명</label>
+                                        <div class="input_area">
+                                            <input type="text" id="RUT_NAM" name="RUT_NAM" title="노선명"class="form-control input-sm" >
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="seq">노선번호</label>
+                                        <div class="input_area">
+                                            <input type="text" id="RUT_IDN" name="RUT_IDN" title="노선번호"class="form-control input-sm" onlyNumber>
+                                        </div>
+                                    </li>                         
     """
 
     # onChange, defaultValue 따옴표 제거
