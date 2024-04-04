@@ -70,7 +70,7 @@ def main():
     cursor = conn.cursor()
     
     #테이블 명
-    table_name = 'rdt_ipcr_dt';
+    table_name = 'rdl_bycp_as';
 
     
     #컬럼명, 컬럼 타입, 컬럼 코멘트 조회 쿼리

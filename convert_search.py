@@ -84,17 +84,67 @@ def convert_html(input_html):
 if __name__ == '__main__':
     #변환 해야할 html 소스
     input_html = """
-                                    <li>
+                                  <li>
 									    <label for="seq">관리번호</label>
                                         <div class="input_area">
-                                            <input type="text" id="FTR_IDN" name="FTR_IDN" title="관리번호" class="form-control input-sm" onlyNumber>
+                                            <input type="text" id="FTR_IDN" name="FTR_IDN" title="관리번호"class="form-control input-sm" onlyNumber>
+                                        </div>
+                                    </li>
+									<li>
+										<label for="mngt">관리기관</label>
+										<div class="input_area">
+										    <uis:codeselect name="MNG_CDE" selected="" codetable="CMT_MNGR_MA" stylestring="class='column_filter input-sm'"></uis:codeselect>
+										</div>
+									</li>
+									<li>
+										<label for="HJD_CDE">행정동</label>
+										<div class="input_area">
+										    <uis:codeselect name="HJD_CDE" selected="" codetable="CMT_ADAR_MA" stylestring="class='column_filter input-sm'"></uis:codeselect>
+										</div>
+									</li>
+									<li>
+                                        <label for="BJD_CDE">법정동</label>
+                                        <div class="input_area">
+                                            <uis:codeselect name="BJD_CDE" selected="" codetable="CMT_LGAR_MA" stylestring="class='column_filter input-sm'"></uis:codeselect>
                                         </div>
                                     </li>
                                     <li>
-                                        <label for="seq">구간번호</label>
+                                        <label for="GGB_CDE">자전거도로구분</label>
                                         <div class="input_area">
-                                            <input type="text" id="SEC_IDN" name="SEC_IDN" title="공사번호" class="form-control input-sm" onlyNumber>
+                                            <uis:codeselect name="BYC_CDE" selected="" codetable="CMT_CODE_MA" tablename="RDL_BYCP_AS" codetype="BYC_CDE" stylestring="class='column_filter input-sm'"></uis:codeselect>
                                         </div>
+                                    </li>
+                                    <li>
+                                        <label for="GGB_CDE">위치구분</label>
+                                        <div class="input_area">
+                                            <uis:codeselect name="PLC_CDE" selected="" codetable="CMT_CODE_MA" tablename="RDL_BYCP_AS" codetype="PLC_CDE" stylestring="class='column_filter input-sm'"></uis:codeselect>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="GGB_CDE">도로재질</label>
+                                        <div class="input_area">
+                                            <uis:codeselect name="BMT_CDE" selected="" codetable="CMT_CODE_MA" tablename="RDL_BYCP_AS" codetype="BMT_CDE" stylestring="class='column_filter input-sm'"></uis:codeselect>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="GGB_CDE">경계종류</label>
+                                        <div class="input_area">
+                                            <uis:codeselect name="DWY_CDE" selected="" codetable="CMT_CODE_MA" tablename="RDL_BYCP_AS" codetype="DWY_CDE" stylestring="class='column_filter input-sm'"></uis:codeselect>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="mngt">설치일자</label>
+                                            <div class="input_area">
+                                                <div class="myDatepicker input-group date td_dateForm" style="width:45%; display: inline-table;">
+                                                    <input type="text" id="BYC_YMD_str" name="BYC_YMD_str" value="" class="form-control input-date" maxlength="8" style="padding:6px;"/>
+                                                    <span class="input-group-addon" ></span>
+                                                </div>
+                                                <span>~</span>
+                                                <div class="myDatepicker input-group date td_dateForm" style="width:45%; float:right; display: inline-table;">
+                                                    <input type="text" id="BYC_YMD_end" name="BYC_YMD_end" value="" class="form-control input-date" maxlength="8" style="padding:6px;"/>
+                                                    <span class="input-group-addon" ></span>
+                                                </div>
+                                            </div>
                                     </li>
                                     <li>
                                         <label for="RAW_CDE">도로구분</label>
@@ -102,7 +152,7 @@ if __name__ == '__main__':
                                             <uis:codeselect name="RAW_CDE" selected="" codetable="CMT_CODE_MA" tablename="RDT_ROUT_DT" codetype="RAW_CDE" stylestring="class='column_filter input-sm'"></uis:codeselect>
                                         </div>
                                     </li>
-									<li>
+                                    <li>
                                         <label for="JYG_CDE">도로기능</label>
                                         <div class="input_area">
                                             <uis:codeselect name="FNC_CDE" selected="" codetable="CMT_CODE_MA" tablename="RDT_ROUT_DT" codetype="FNC_CDE" stylestring="class='column_filter input-sm'"></uis:codeselect>
@@ -119,7 +169,7 @@ if __name__ == '__main__':
                                         <div class="input_area">
                                             <input type="text" id="RUT_IDN" name="RUT_IDN" title="노선번호"class="form-control input-sm" onlyNumber>
                                         </div>
-                                    </li>                         
+                                    </li>                      
     """
 
     # onChange, defaultValue 따옴표 제거
